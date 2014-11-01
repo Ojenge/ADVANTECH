@@ -4,19 +4,22 @@ if (!defined('BASEPATH'))
 
 class Template extends MY_Controller {
 
-
 	function __construct() {
 		parent::__construct();
 	}
 
-	public function index() {
+	public function test() 
+	{
+        $data['content_view'] = "demo_view";
+        $data['title'] = "Advantech | Dashboard";
+        $this -> load -> view('template_view',$data);
 	}
 	
-	public function default_load($data){
+	public function load($data){
 		if(!$this->session->userdata("id")){
-            redirect("user/login");
+            redirect("user/login_view");
 		}else{
-		    $this -> load -> view('template',$data);
+		    $this -> load -> view('template_view',$data);
 		}
 	}
 
