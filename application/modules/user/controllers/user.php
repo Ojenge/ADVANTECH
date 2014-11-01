@@ -134,7 +134,8 @@ class user extends MY_Controller {
 	}
 
 	public function login(){
-        $this->load->view("user/login");
+		$data['title'] = "Advantech | Login";
+        $this->load->view("user/login_view",$data);
 	}
 
 	public function authenticate(){
